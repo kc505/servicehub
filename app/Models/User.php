@@ -57,4 +57,12 @@ public function isClient(): bool
 {
     return $this->role === 'client';
 }
+public function providerProfile()
+{
+    return $this->hasOne(ProviderProfile::class);
+}
+public function bookings()
+{
+    return $this->hasMany(Booking::class, 'client_id');
+}
 }
